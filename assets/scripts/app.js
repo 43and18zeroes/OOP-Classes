@@ -14,7 +14,10 @@ class DOMHelper {
 
 class Tooltip {
   show() {
-    console.log('The tooltip...');
+    const tooltipElement = document.createElement('div');
+    tooltipElement.classname = 'card';
+    tooltipElement.textContent = 'DUMMY!';
+    document.body.append(tooltipElement);
   }
 }
 
