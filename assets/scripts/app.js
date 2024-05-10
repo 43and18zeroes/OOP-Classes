@@ -13,10 +13,17 @@ class DOMHelper {
 }
 
 class Tooltip {
-  show() {
+  detach = () => {
+    this.element.remove();
+    // this.element.parentElement.removeChild(this.element);
+  };
+
+  attach() {
     const tooltipElement = document.createElement('div');
-    tooltipElement.classname = 'card';
+    tooltipElement.className = 'card';
     tooltipElement.textContent = 'DUMMY!';
+    tooltipElement.addEventListener('click', this.detach);
+    this.element = tooltipElement;
     document.body.append(tooltipElement);
   }
 }
@@ -31,7 +38,7 @@ class ProjectItem {
 
   showMoreInfoHandler() {
     const tooltip = new Tooltip();
-    tooltip.show();
+    tooltip.attach();
   }
 
   connectMoreInfoButton() {
