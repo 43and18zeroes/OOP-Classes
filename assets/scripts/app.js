@@ -13,13 +13,27 @@ class DOMHelper {
 }
 
 class Component {
+  constructor(hostElementId, insertBefore = false) {
+    if (hostElementId) {
+      this.hostElementId = document.getElementById(hostElementId);
+    } else {
+      this.hostElementId = document.body;
+    }
+    this.insertBefore = insertBefore;
+  }
+
   detach() {
-    this.element.remove();
-    // this.element.parentElement.removeChild(this.element);
+    if (this.element) {
+      this.element.remove();
+      // this.element.parentElement.removeChild(this.element);
+    }
   }
 
   attach() {
-    document.body.append(this.element);
+    this.hostElementId.insertAdjacentElement(
+      this.insertBefore ? 'afterbegin' : 'beforeend',
+      this.element
+    );
   }
 }
 
@@ -117,8 +131,8 @@ class ProjectList {
   switchProject(projectId) {
     // const projectIndex = this.projects.findIndex(p => p.id === projectId);
     // this.projects.splice(projectIndex, 1);
-    this.switchHandler(this.projects.find(p => p.id === projectId));
-    this.projects = this.projects.filter(p => p.id !== projectId);
+    this.switchHandler(this.projects.find((p) => p.id === projectId));
+    this.projects = this.projects.filter((p) => p.id !== projectId);
   }
 }
 
