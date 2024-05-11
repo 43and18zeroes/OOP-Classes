@@ -12,9 +12,22 @@ class DOMHelper {
   }
 }
 
-class Tooltip {
+class Component {
+  detach() {
+    this.element.remove();
+    // this.element.parentElement.removeChild(this.element);
+  }
+
+  attach() {
+    document.body.append(this.element);
+  }
+}
+
+class Tooltip extends Component {
   constructor(closeNotifierFunction) {
+    super();
     this.closeNotifier = closeNotifierFunction;
+    this.create();
   }
 
   closeTooltip = () => {
@@ -22,18 +35,12 @@ class Tooltip {
     this.closeNotifier();
   };
 
-  detach() {
-    this.element.remove();
-    // this.element.parentElement.removeChild(this.element);
-  }
-
-  attach() {
+  create() {
     const tooltipElement = document.createElement('div');
     tooltipElement.className = 'card';
     tooltipElement.textContent = 'DUMMY!';
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
-    document.body.append(tooltipElement);
   }
 }
 
