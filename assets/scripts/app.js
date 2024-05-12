@@ -38,9 +38,10 @@ class Component {
 }
 
 class Tooltip extends Component {
-  constructor(closeNotifierFunction) {
+  constructor(closeNotifierFunction, text) {  // dataset
     super();
     this.closeNotifier = closeNotifierFunction;
+    this.text = text; // dataset
     this.create();
   }
 
@@ -52,7 +53,7 @@ class Tooltip extends Component {
   create() {
     const tooltipElement = document.createElement('div');
     tooltipElement.className = 'card';
-    tooltipElement.textContent = 'DUMMY!';
+    tooltipElement.textContent = this.text; // dataset
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
   }
@@ -73,10 +74,10 @@ class ProjectItem {
       return;
     }
     const projectElement = document.getElementById(this.id);
-    const tooltipText = projectElement.dataset.extraInfo;
+    const tooltipText = projectElement.dataset.extraInfo; // dataset
     const tooltip = new Tooltip(() => {
       this.hasActiveTooltip = false;
-    }, tooltipText);
+    }, tooltipText);  // dataset
     tooltip.attach();
     this.hasActiveTooltip = true;
   }
