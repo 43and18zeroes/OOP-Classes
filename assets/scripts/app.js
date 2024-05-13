@@ -39,7 +39,7 @@ class Component {
 
 class Tooltip extends Component {
   constructor(closeNotifierFunction, text) {  // dataset
-    super();
+    super(hostElementId);
     this.closeNotifier = closeNotifierFunction;
     this.text = text; // dataset
     this.create();
