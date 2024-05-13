@@ -1,9 +1,7 @@
-// setInterval(() => {
-//   console.log('Sending analytics...');
-// }, 2000);
+const intervalId = setInterval(() => {
+  console.log('Sending analytics...');
+}, 2000);
 
-setInterval(printAnalytics, 2000);
-
-function printAnalytics() {
-    console.log('Sending analytics...');
-}
+document.getElementById('stop-analytics-btn').addEventListener('click', () => {
+    clearInterval(intervalId);
+});
