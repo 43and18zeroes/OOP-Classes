@@ -9,7 +9,7 @@ class DOMHelper {
     const element = document.getElementById(elementId);
     const destinationElement = document.querySelector(newDestinationSelector);
     destinationElement.append(element);
-    element.scrollIntoView(); // Scroll
+    element.scrollIntoView({behavior: 'smooth'}); // Scroll
   }
 }
 
