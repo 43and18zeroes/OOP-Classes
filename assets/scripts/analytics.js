@@ -1,1 +1,1 @@
-console.log('Running analytics...');
+console.log('Sending analytics...');
