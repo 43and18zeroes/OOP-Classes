@@ -25,7 +25,6 @@ class Component {
   detach() {
     if (this.element) {
       this.element.remove();
-      // this.element.parentElement.removeChild(this.element);
     }
   }
 
@@ -62,7 +61,7 @@ class Tooltip extends Component {
     const parentElementScrolling = this.hostElement.parentElement.scrollTop; // positioning
 
     const x = hostElPosLeft + 20; // positioning
-    const y = hostElPosTop + hostElHeight - 10; // positioning
+    const y = hostElPosTop + hostElHeight - parentElementScrolling - 10; // positioning
 
     tooltipElement.style.position = 'absolute'; // positioning
     tooltipElement.style.left = x + 'px'; // positioning
