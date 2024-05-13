@@ -170,7 +170,7 @@ class App {
       activeProjectsList.addProject.bind(activeProjectsList)
     );
 
-    this.startAnalytics();
+    setTimeout(this.startAnalytics, 3000);
   }
 
   static startAnalytics() {
