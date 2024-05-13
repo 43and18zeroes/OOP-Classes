@@ -38,10 +38,10 @@ class Component {
 }
 
 class Tooltip extends Component {
-  constructor(closeNotifierFunction, text, hostElementId) {  // dataset
+  constructor(closeNotifierFunction, text, hostElementId) {
     super(hostElementId);
     this.closeNotifier = closeNotifierFunction;
-    this.text = text; // dataset
+    this.text = text;
     this.create();
   }
 
@@ -53,7 +53,7 @@ class Tooltip extends Component {
   create() {
     const tooltipElement = document.createElement('div');
     tooltipElement.className = 'card';
-    tooltipElement.textContent = this.text; // dataset
+    tooltipElement.textContent = this.text;
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
   }
