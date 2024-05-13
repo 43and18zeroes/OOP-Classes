@@ -63,6 +63,9 @@ class Tooltip extends Component {
     const x = hostElPosLeft + 20; // positioning
     const y = hostElPosTop + hostElHeight - 10; // positioning
 
+    tooltipElement.style.left = x + 'px'; // positioning
+    tooltipElement.style.top = y + 'px'; // positioning
+
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
   }
