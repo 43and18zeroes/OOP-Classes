@@ -59,6 +59,7 @@ class Tooltip extends Component {
     const hostElPosLeft = this.hostElement.offsetLeft; // x coordinate of the element
     const hostElPosTop = this.hostElement.offsetTop; // y coordinate of the element
     const hostElHeight = this.hostElement.clientHeight // height of the content
+    const parentElementScrolling = this.hostElement.parentElement.scrollTop; // positioning
 
     const x = hostElPosLeft + 20; // positioning
     const y = hostElPosTop + hostElHeight - 10; // positioning
