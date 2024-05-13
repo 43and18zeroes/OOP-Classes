@@ -54,18 +54,18 @@ class Tooltip extends Component {
     tooltipElement.className = 'card';
     tooltipElement.textContent = this.text;
 
-    console.log(this.hostElement.getBoundingClientRect()); // positioning
-    const hostElPosLeft = this.hostElement.offsetLeft; // x coordinate of the element
-    const hostElPosTop = this.hostElement.offsetTop; // y coordinate of the element
-    const hostElHeight = this.hostElement.clientHeight // height of the content
-    const parentElementScrolling = this.hostElement.parentElement.scrollTop; // positioning
+    console.log(this.hostElement.getBoundingClientRect());
+    const hostElPosLeft = this.hostElement.offsetLeft;
+    const hostElPosTop = this.hostElement.offsetTop;
+    const hostElHeight = this.hostElement.clientHeight;
+    const parentElementScrolling = this.hostElement.parentElement.scrollTop;
 
-    const x = hostElPosLeft + 20; // positioning
-    const y = hostElPosTop + hostElHeight - parentElementScrolling - 10; // positioning
+    const x = hostElPosLeft + 20;
+    const y = hostElPosTop + hostElHeight - parentElementScrolling - 10;
 
-    tooltipElement.style.position = 'absolute'; // positioning
-    tooltipElement.style.left = x + 'px'; // positioning
-    tooltipElement.style.top = y + 'px'; // positioning
+    tooltipElement.style.position = 'absolute';
+    tooltipElement.style.left = x + 'px';
+    tooltipElement.style.top = y + 'px';
 
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
@@ -88,9 +88,13 @@ class ProjectItem {
     }
     const projectElement = document.getElementById(this.id);
     const tooltipText = projectElement.dataset.extraInfo;
-    const tooltip = new Tooltip(() => {
-      this.hasActiveTooltip = false;
-    }, tooltipText, this.id); // positioning
+    const tooltip = new Tooltip(
+      () => {
+        this.hasActiveTooltip = false;
+      },
+      tooltipText,
+      this.id
+    ); // positioning
     tooltip.attach();
     this.hasActiveTooltip = true;
   }
@@ -147,8 +151,8 @@ class ProjectList {
   switchProject(projectId) {
     // const projectIndex = this.projects.findIndex(p => p.id === projectId);
     // this.projects.splice(projectIndex, 1);
-    this.switchHandler(this.projects.find(p => p.id === projectId));
-    this.projects = this.projects.filter(p => p.id !== projectId);
+    this.switchHandler(this.projects.find((p) => p.id === projectId));
+    this.projects = this.projects.filter((p) => p.id !== projectId);
   }
 }
 
