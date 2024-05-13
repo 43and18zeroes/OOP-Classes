@@ -174,6 +174,12 @@ class App {
     someScript.textContent = 'alert("Hi there")';
     document.head.append(someScript);
   }
+
+  static startAnalytics() {
+    const analyticsScript = document.createElement('script');
+    analyticsScript.src = 'assets/scripts/analytics.js';
+    analyticsScript.defer = true;
+  }
 }
 
 App.init();
