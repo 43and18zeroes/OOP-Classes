@@ -177,6 +177,7 @@ class App {
     // });
 
     throw 'An error';
+    throw new Error('Something');
   }
 
   static startAnalytics() {
