@@ -180,6 +180,8 @@ class App {
     throw new Error('Something');
 
     const customError = new Error('Something');
+    customError.code = 404;
+    console.log(customError.code);
   }
 
   static startAnalytics() {
