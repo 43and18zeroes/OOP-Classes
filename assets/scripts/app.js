@@ -9,7 +9,7 @@ class DOMHelper {
     const element = document.getElementById(elementId);
     const destinationElement = document.querySelector(newDestinationSelector);
     destinationElement.append(element);
-    element.scrollIntoView({ behavior: 'smooth' }); // Scroll
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -26,6 +26,7 @@ class Component {
   detach() {
     if (this.element) {
       this.element.remove();
+      // this.element.parentElement.removeChild(this.element);
     }
   }
 
@@ -39,7 +40,7 @@ class Component {
 
 class Tooltip extends Component {
   constructor(closeNotifierFunction, text, hostElementId) {
-    super(hostElementId); // positioning
+    super(hostElementId);
     this.closeNotifier = closeNotifierFunction;
     this.text = text;
     this.create();
@@ -67,7 +68,7 @@ class Tooltip extends Component {
     const y = hostElPosTop + hostElHeight - parentElementScrolling - 10;
 
     tooltipElement.style.position = 'absolute';
-    tooltipElement.style.left = x + 'px';
+    tooltipElement.style.left = x + 'px'; // 500px
     tooltipElement.style.top = y + 'px';
 
     tooltipElement.addEventListener('click', this.closeTooltip);
@@ -97,7 +98,7 @@ class ProjectItem {
       },
       tooltipText,
       this.id
-    ); // positioning
+    );
     tooltip.attach();
     this.hasActiveTooltip = true;
   }
@@ -154,8 +155,8 @@ class ProjectList {
   switchProject(projectId) {
     // const projectIndex = this.projects.findIndex(p => p.id === projectId);
     // this.projects.splice(projectIndex, 1);
-    this.switchHandler(this.projects.find((p) => p.id === projectId));
-    this.projects = this.projects.filter((p) => p.id !== projectId);
+    this.switchHandler(this.projects.find(p => p.id === projectId));
+    this.projects = this.projects.filter(p => p.id !== projectId);
   }
 }
 
@@ -170,11 +171,11 @@ class App {
       activeProjectsList.addProject.bind(activeProjectsList)
     );
 
-    // const timerId = setTimeout(this.startAnalytics, 3000);
+    const timerId = setTimeout(this.startAnalytics, 3000);
 
-    // document.getElementById('stop-analytics-btn').addEventListener('click', () => {
-    //     clearTimeout(timerId);
-    // });
+    document.getElementById('stop-analytics-btn').addEventListener('click', () => {
+      clearTimeout(timerId);
+    });
   }
 
   static startAnalytics() {
