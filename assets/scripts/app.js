@@ -178,6 +178,8 @@ class App {
 
     throw 'An error';
     throw new Error('Something');
+
+    const customError = new Error('Something');
   }
 
   static startAnalytics() {
