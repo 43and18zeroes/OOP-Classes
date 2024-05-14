@@ -4,8 +4,17 @@ const button = document.querySelector('button');
 
 // };
 
-const buttonClickHandler = () => {
-    alert('Button was clicked!');
-}
+// const buttonClickHandler = () => {
+//     alert('Button was clicked!');
+// };
 
-button.onclick = buttonClickHandler;
+// const anotherButtonClickHandler = () => {
+//     console.log('This was clicked!');
+// };
+
+// button.onclick = buttonClickHandler;
+// button.onclick = anotherButtonClickHandler;
+
+button.addEventListener();
+
+button.removeEventListener();
