@@ -175,14 +175,6 @@ class App {
     // document.getElementById('stop-analytics-btn').addEventListener('click', () => {
     //     clearTimeout(timerId);
     // });
-
-    throw 'An error';
-    throw new Error('Something');
-
-    const customError = new Error('Something');
-    customError.code = 404;
-    console.log(customError.code);
-    console.dir(customError);
   }
 
   static startAnalytics() {
