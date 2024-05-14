@@ -182,6 +182,7 @@ class App {
     const customError = new Error('Something');
     customError.code = 404;
     console.log(customError.code);
+    console.dir(customError);
   }
 
   static startAnalytics() {
