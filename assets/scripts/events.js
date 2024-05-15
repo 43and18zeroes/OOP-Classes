@@ -31,7 +31,8 @@
 
 const buttons = document.querySelectorAll('button');
 
-const buttonClickHandler = (event) => {
+const buttonClickHandler = event => {
+  event.target.disabled = true;
   console.log(event);
 };
 
