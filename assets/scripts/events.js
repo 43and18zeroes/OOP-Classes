@@ -5,20 +5,18 @@ const button = document.querySelector('button');
 // };
 
 const buttonClickHandler = () => {
-    alert('Button was clicked!');
+  console.log('Click');
 };
 
 const anotherButtonClickHandler = () => {
-    console.log('This was clicked!');
+  console.log('This was clicked!');
 };
 
 // button.onclick = buttonClickHandler;
 // button.onclick = anotherButtonClickHandler;
 
-button.addEventListener('click', buttonClickHandler);
+button.addEventListener('click', buttonClickHandler.bind(this));
 
 setTimeout(() => {
-    button.removeEventListener('click', buttonClickHandler);
+  button.removeEventListener('click', buttonClickHandler.bind(this));
 }, 2000);
-
-// button.removeEventListener();
