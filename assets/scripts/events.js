@@ -44,9 +44,10 @@
 //   console.log(event);
 // });
 
-const form = document.querySelector('form');
+// const form = document.querySelector('form');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  console.log(event);
-});
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   console.log(event);
+// });
+
