@@ -51,3 +51,16 @@
 //   console.log(event);
 // });
 
+const bubbleBtn = document.getElementById('bubbleBtn');
+const bubbleSec = document.getElementById('bubbleSec');
+
+function bubbleBtnClickHandler() {
+  console.log('bubbleBtn');
+}
+
+function bubbleSecClickHandler() {
+  console.log('bubbleSec');
+}
+
+bubbleBtn.addEventListener('click', bubbleBtnClickHandler);
+bubbleSec.addEventListener('click', bubbleSecClickHandler);
