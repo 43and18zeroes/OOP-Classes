@@ -37,5 +37,5 @@ const buttonClickHandler = event => {
 };
 
 buttons.forEach(btn => {
-    btn.addEventListener('click', buttonClickHandler);
+    btn.addEventListener('mouseenter', buttonClickHandler);
 })
