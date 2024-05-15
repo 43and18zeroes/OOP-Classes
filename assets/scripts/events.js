@@ -1,12 +1,10 @@
-const button = document.querySelector('button');
+
 
 // button.onclick = function() {
 
 // };
 
-// const buttonClickHandler = () => {
-//     alert('Button was clicked!');
-// };
+
 
 // const anotherButtonClickHandler = () => {
 //     console.log('This was clicked!');
@@ -14,7 +12,11 @@ const button = document.querySelector('button');
 
 // button.onclick = buttonClickHandler;
 // button.onclick = anotherButtonClickHandler;
+const buttonClickHandler = () => {
+    alert('Button was clicked!');
+};
 
-button.addEventListener();
+const button = document.querySelector('button');
+button.addEventListener('click', buttonClickHandler);
 
 // button.removeEventListener();
