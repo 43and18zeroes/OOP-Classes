@@ -15,8 +15,10 @@ const anotherButtonClickHandler = () => {
 // button.onclick = buttonClickHandler;
 // button.onclick = anotherButtonClickHandler;
 
-button.addEventListener('click', buttonClickHandler.bind(this));
+const boundFn = buttonClickHandler.bind(this);
+
+button.addEventListener('click', boundFn);
 
 setTimeout(() => {
-  button.removeEventListener('click', buttonClickHandler.bind(this));
+  button.removeEventListener('click', boundFn);
 }, 2000);
