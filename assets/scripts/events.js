@@ -66,4 +66,12 @@
 // bubbleSec.addEventListener('click', bubbleSecClickHandler);
 
 const button = document.querySelector('button');
+const div = document.querySelector('div');
 
+button.addEventListener('click', event => {
+  console.log(event);
+});
+
+div.addEventListener('click', event => {
+  console.log(event);
+});
