@@ -51,16 +51,19 @@
 //   console.log(event);
 // });
 
-const bubbleBtn = document.getElementById('bubbleBtn');
-const bubbleSec = document.getElementById('bubbleSec');
+// const bubbleBtn = document.getElementById('bubbleBtn');
+// const bubbleSec = document.getElementById('bubbleSec');
 
-function bubbleBtnClickHandler() {
-  console.log('bubbleBtn');
-}
+// function bubbleBtnClickHandler() {
+//   console.log('bubbleBtn');
+// }
 
-function bubbleSecClickHandler() {
-  console.log('bubbleSec');
-}
+// function bubbleSecClickHandler() {
+//   console.log('bubbleSec');
+// }
 
-bubbleBtn.addEventListener('click', bubbleBtnClickHandler);
-bubbleSec.addEventListener('click', bubbleSecClickHandler);
+// bubbleBtn.addEventListener('click', bubbleBtnClickHandler);
+// bubbleSec.addEventListener('click', bubbleSecClickHandler);
+
+const button = document.querySelector('button');
+
