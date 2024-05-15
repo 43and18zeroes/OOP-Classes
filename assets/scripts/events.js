@@ -17,4 +17,8 @@ const anotherButtonClickHandler = () => {
 
 button.addEventListener('click', buttonClickHandler);
 
+setTimeout(() => {
+    button.removeEventListener('click', buttonClickHandler);
+}, 2000);
+
 // button.removeEventListener();
