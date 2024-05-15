@@ -69,9 +69,11 @@ const button = document.querySelector('button');
 const div = document.querySelector('div');
 
 button.addEventListener('click', event => {
+  console.log('CLICKED BTN');
   console.log(event);
 });
 
 div.addEventListener('click', event => {
+  console.log('CLICKED DIV');
   console.log(event);
 });
