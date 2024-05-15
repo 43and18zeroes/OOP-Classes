@@ -4,8 +4,8 @@ const button = document.querySelector('button');
 
 // };
 
-const buttonClickHandler = () => {
-  console.log('Click');
+const buttonClickHandler = event => {
+  console.log(event);
 };
 
 const anotherButtonClickHandler = () => {
