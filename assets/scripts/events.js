@@ -1,4 +1,4 @@
-const button = document.querySelector('button');
+// const button = document.querySelector('button');
 
 // button.onclick = function() {
 
@@ -23,8 +23,18 @@ const button = document.querySelector('button');
 //   button.removeEventListener('click', buttonClickHandler);
 // }, 2000);
 
+// const buttonClickHandler = event => {
+//   console.log(event);
+// };
+
+// button.addEventListener('click', buttonClickHandler);
+
+const buttons = document.querySelectorAll('button');
+
 const buttonClickHandler = (event) => {
   console.log(event);
 };
 
-button.addEventListener('click', buttonClickHandler);
+buttons.forEach(btn => {
+    btn.addEventListener('click', buttonClickHandler);
+})
