@@ -65,8 +65,33 @@
 // bubbleBtn.addEventListener('click', bubbleBtnClickHandler);
 // bubbleSec.addEventListener('click', bubbleSecClickHandler);
 
-const button = document.querySelector('button');
-const div = document.querySelector('div');
+// const button = document.querySelector('button');
+// const div = document.querySelector('div');
+
+// button.addEventListener('click', (event) => {
+//   event.stopPropagation();
+//   console.log('CLICKED BTN');
+//   console.log(event);
+// });
+
+// div.addEventListener('click', (event) => {
+//   console.log('CLICKED DIV');
+//   console.log(event);
+// });
+
+// const listItems = document.querySelectorAll('li');
+
+// const list = document.querySelector('ul');
+
+// list.addEventListener('click', event => {
+//   event.target.closest('li').classList.toggle('highlight');
+// });
+
+// listItems.forEach((listItem) => {
+//   listItem.addEventListener('click', event => {
+//     event.target.classList.toggle('highlight');
+//   });
+// });
 
 button.addEventListener('click', (event) => {
   event.stopPropagation();
@@ -74,21 +99,8 @@ button.addEventListener('click', (event) => {
   console.log(event);
 });
 
-div.addEventListener('click', (event) => {
-  console.log('CLICKED DIV');
-  console.log(event);
-});
-
-const listItems = document.querySelectorAll('li');
-
 const list = document.querySelector('ul');
 
 list.addEventListener('click', event => {
-  event.target.parentElement.classList.toggle('highlight');
+  event.target.closest('li').classList.toggle('highlight');
 });
-
-// listItems.forEach((listItem) => {
-//   listItem.addEventListener('click', event => {
-//     event.target.classList.toggle('highlight');
-//   });
-// });
