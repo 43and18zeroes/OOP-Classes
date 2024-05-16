@@ -84,7 +84,7 @@ const listItems = document.querySelectorAll('li');
 const list = document.querySelector('ul');
 
 list.addEventListener('click', event => {
-  event.target.classList.toggle('highlight');
+  event.target.parentElement.classList.toggle('highlight');
 });
 
 // listItems.forEach((listItem) => {
