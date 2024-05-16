@@ -93,14 +93,29 @@
 //   });
 // });
 
+// button.addEventListener('click', (event) => {
+//   event.stopPropagation();
+//   console.log('CLICKED BTN');
+//   console.log(event);
+// });
+
+const form = document.querySelector('form');
+const button = document.querySelector('form button');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  console.log('SUBMIT FORM');
+});
+
 button.addEventListener('click', (event) => {
   event.stopPropagation();
   console.log('CLICKED BTN');
-  console.log(event);
 });
 
 const list = document.querySelector('ul');
 
 list.addEventListener('click', event => {
   event.target.closest('li').classList.toggle('highlight');
+  // form.submit();
+  button.click();
 });
