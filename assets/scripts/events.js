@@ -122,7 +122,7 @@
 
 const button = document.querySelector('button');
 
-button.addEventListener('click', event => {
+button.addEventListener('click', function(event) {
   event.stopPropagation();
   console.log('CLICKED BTN');
   console.log(event);
