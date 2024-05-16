@@ -48,3 +48,8 @@ li {
   padding: 1rem;
   border: 1px solid #ccc;
 }
+
+.highlight {
+  background-color: red;
+  color: white;
+}

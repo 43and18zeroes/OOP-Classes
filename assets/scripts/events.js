@@ -68,13 +68,21 @@
 const button = document.querySelector('button');
 const div = document.querySelector('div');
 
-button.addEventListener('click', event => {
+button.addEventListener('click', (event) => {
   event.stopPropagation();
   console.log('CLICKED BTN');
   console.log(event);
 });
 
-div.addEventListener('click', event => {
+div.addEventListener('click', (event) => {
   console.log('CLICKED DIV');
   console.log(event);
+});
+
+const listItems = document.querySelectorAll('li');
+
+listItems.forEach((listItems) => {
+  listItems.addEventListener('click', (event) => {
+    event.target.classList.toggle('highlight');
+  });
 });
