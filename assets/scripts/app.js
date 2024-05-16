@@ -166,6 +166,12 @@ class ProjectList {
         event.preventDefault();
       }
     });
+
+    list.addEventListener('dragleave', event => {
+      if (event.relatedTarget.closest(`#${this.type}-projects ul`) !== list) {
+        list.parentElement.classList.remove('droppable');
+      }
+    });
   }
 
   setSwitchHandlerFunction(switchHandlerFunction) {
