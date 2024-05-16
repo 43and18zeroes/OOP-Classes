@@ -39,3 +39,12 @@ button:active {
 #long-one {
   height: 3000px;
 }
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
