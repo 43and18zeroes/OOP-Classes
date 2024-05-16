@@ -81,8 +81,8 @@ div.addEventListener('click', (event) => {
 
 const listItems = document.querySelectorAll('li');
 
-listItems.forEach((listItems) => {
-  listItems.addEventListener('click', (event) => {
+listItems.forEach((listItem) => {
+  listItem.addEventListener('click', event => {
     event.target.classList.toggle('highlight');
   });
 });
