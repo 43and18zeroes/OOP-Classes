@@ -172,6 +172,10 @@ class ProjectList {
         list.parentElement.classList.remove('droppable');
       }
     });
+
+    list.addEventListener('drop', event => {
+      const prjId = event.dataTransfer.getData('text/plain');
+    })
   }
 
   setSwitchHandlerFunction(switchHandlerFunction) {
