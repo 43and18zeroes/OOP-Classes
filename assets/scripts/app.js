@@ -111,6 +111,7 @@ class ProjectItem {
       event.dataTransfer.effectAllowed = 'move';
     });
 
+    // optional dragend event
     item.addEventListener('dragend', event => {
       console.log(event);
     });
